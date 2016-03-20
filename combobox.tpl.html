@@ -2,8 +2,10 @@
         ng-keydown="keydown($event)"
         ng-focus="active = true"
         ng-blur="active = false"
-        ng-click="active = !active"
+        ng-click="active = !active">
+  <div class="combobox-input-value"
         ng-bind="selectedItem == null ? placeholder : selectedItem.text">
+  </div>
 </button>
 <ul class="combobox-list" ng-if="active">
   <li class="combobox-list-li" ng-repeat="item in items" ng-class="{selected: item === selectedItem}">
