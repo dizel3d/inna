@@ -1,0 +1,8 @@
+<div>
+  <input type="text" ng-model="selectedItem.text" placeholder="{{placeholder}}" readonly ng-keydown="keydown($event)" />
+  <ul>
+    <li ng-repeat="item in items" ng-class="{selected: item === selectedItem}">
+      <div class="item" ng-mousedown="select(item)">{{item.text}}</div>
+    </li>
+  </ul>
+</div>
