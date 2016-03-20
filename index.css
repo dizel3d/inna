@@ -26,6 +26,11 @@ body {
     text-decoration: none;
     height: 1em;
     line-height: 1em;
+    outline: none;
+}
+
+.combobox .input:focus {
+    box-shadow: inset 0 0 2px #00f;
 }
 
 .combobox .input.empty {
@@ -34,17 +39,13 @@ body {
 
 .combobox ul {
     position: absolute;
-    display: none;
+    display: block;
     width: 100%;
     box-shadow: 0 1px 2px 1px rgba(0,0,0,0.2);
     top: 0;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.combobox .input:focus + ul {
-    display: block;
 }
 
 .combobox li:hover {

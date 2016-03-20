@@ -1,8 +1,9 @@
 <div>
-  <a class="input" href="javascript:void(0)" ng-keydown="keydown($event)" ng-class="{empty: selectedItem == null}">
+  <a class="input" href="javascript:void(0)" ng-keydown="keydown($event)" ng-class="{empty: selectedItem == null}"
+     ng-focus="active = true" ng-blur="active = false" ng-click="active = !active">
     {{selectedItem == null ? placeholder : selectedItem.text}}
   </a>
-  <ul>
+  <ul ng-if="active">
     <li ng-repeat="item in items" ng-class="{selected: item === selectedItem}">
       <div class="item" ng-mousedown="select(item)">{{item.text}}</div>
     </li>
