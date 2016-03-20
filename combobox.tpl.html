@@ -5,7 +5,7 @@
   </a>
   <ul ng-if="active">
     <li ng-repeat="item in items" ng-class="{selected: item === selectedItem}">
-      <div class="item" ng-mousedown="select(item)">{{item.text}}</div>
+      <div class="item" ng-mousedown="select(item, $event)">{{item.text}}</div>
     </li>
   </ul>
 </div>

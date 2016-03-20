@@ -24,15 +24,11 @@ angular.module('app', [])
         require: 'ngModel',
         restrict: 'C',
         templateUrl: 'combobox.tpl.html',
-        link: function(scope, elem) {
-            scope.select = function(item) {
+        link: function(scope) {
+            scope.select = function(item, e) {
+                e.preventDefault();
                 scope.selectedItem = item;
-                setTimeout(function() {
-                    elem[0].querySelector('.input').focus();
-                    scope.$evalAsync(function() {
-                        scope.active = false;
-                    });
-                }, 0);
+                scope.active = false;
             };
 
             scope.keydown = function(e) {
