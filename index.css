@@ -27,6 +27,7 @@ body {
     height: 1em;
     line-height: 1em;
     outline: none;
+    overflow: hidden;
 }
 
 .combobox .input:focus {
