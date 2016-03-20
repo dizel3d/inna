@@ -8,8 +8,9 @@
   <script src="index.js"></script>
 </head>
 <body ng-controller="MainCtrl">
-  <div class="combobox" items="data.dest" placeholder="Куда?"></div>
-  <div class="combobox" items="data.time" placeholder="Когда?"></div>
-  <div class="combobox" items="data.dur" placeholder="На сколько?"></div>
+  <div class="combobox" items="data.dest" placeholder="Куда?" ng-model="selected.dest"></div>
+  <div class="combobox" items="data.time" placeholder="Когда?" ng-model="selected.time"></div>
+  <div class="combobox" items="data.dur" placeholder="На сколько?" ng-model="selected.dur"></div>
+  <pre class="output">{{selected | json}}</pre>
 </body>
 </html>

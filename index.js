@@ -4,9 +4,11 @@ angular.module('app', [])
 .controller('MainCtrl', function($scope, $http) {
     $http.get('data.json').then(function(resp) {
         $scope.data = {};
+        $scope.selected = {};
+
         Object.keys(resp.data).forEach(function(key) {
-            $scope.data[key] = resp.data[key].map(function(text) {
-                return {text: text};
+            $scope.data[key] = resp.data[key].map(function(text, index) {
+                return {index: index, text: text};
             });
         });
     });
@@ -16,13 +18,13 @@ angular.module('app', [])
     return {
         scope: {
             placeholder: '@',
-            items: '='
+            items: '=',
+            selectedItem: '=ngModel'
         },
+        require: 'ngModel',
         restrict: 'C',
         templateUrl: 'combobox.tpl.html',
         link: function(scope) {
-            scope.selectItem = null;
-
             scope.select = function(item) {
                 scope.selectedItem = item;
             };
