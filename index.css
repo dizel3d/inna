@@ -16,29 +16,31 @@ body {
     vertical-align: top;
 }
 
-.combobox .input {
+.combobox-input {
     display: block;
     background: #fff;
     border: 1px solid #cecece;
-    padding: 4px 8px;
+    padding: 0 8px;
     cursor: pointer;
     color: black;
     text-decoration: none;
-    height: 1em;
+    height: 2em;
     line-height: 1em;
     outline: none;
     overflow: hidden;
+    width: 100%;
+    text-align: left;
 }
 
-.combobox .input:focus {
+.combobox-input:focus {
     box-shadow: inset 0 0 2px #00f;
 }
 
-.combobox .input.empty {
+.combobox-input.empty {
     color: #bbb;
 }
 
-.combobox ul {
+.combobox-list {
     position: absolute;
     display: block;
     width: 100%;
@@ -49,23 +51,23 @@ body {
     padding: 0;
 }
 
-.combobox li:hover {
+.combobox-list-li:hover {
     background: #eee;
 }
 
-.combobox li {
+.combobox-list-li {
     display: block;
     background: #fff;
 }
 
-.combobox li .item {
+.combobox-list-li.selected {
+    background: #afa;
+}
+
+.combobox-list-item {
     display: block;
     text-decoration: none;
     color: #000;
     padding: 4px 8px;
     cursor: pointer;
-}
-
-.combobox li.selected {
-    background: #afa;
 }

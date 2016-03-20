@@ -1,11 +1,15 @@
-<div>
-  <a class="input" href="javascript:void(0)" ng-keydown="keydown($event)" ng-class="{empty: selectedItem == null}"
-     ng-focus="active = true" ng-blur="active = false" ng-click="active = !active">
-    {{selectedItem == null ? placeholder : selectedItem.text}}
-  </a>
-  <ul ng-if="active">
-    <li ng-repeat="item in items" ng-class="{selected: item === selectedItem}">
-      <div class="item" ng-mousedown="select(item, $event)">{{item.text}}</div>
-    </li>
-  </ul>
-</div>
+<button class="combobox-input" ng-class="{empty: selectedItem == null}"
+        ng-keydown="keydown($event)"
+        ng-focus="active = true"
+        ng-blur="active = false"
+        ng-click="active = !active"
+        ng-bind="selectedItem == null ? placeholder : selectedItem.text">
+</button>
+<ul class="combobox-list" ng-if="active">
+  <li class="combobox-list-li" ng-repeat="item in items" ng-class="{selected: item === selectedItem}">
+    <div class="combobox-list-item"
+         ng-mousedown="select(item, $event)"
+         ng-bind="item.text">
+    </div>
+  </li>
+</ul>
