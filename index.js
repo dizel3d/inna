@@ -37,7 +37,7 @@ angular.module('app', [])
 
             scope.keydown = function(e) {
                 if (e.keyCode === 38/*ArrowUp*/) {
-                    selectNext(-1, scope.items.length);
+                    selectNext(-1, scope.items.length - 1);
                 } else if (e.keyCode === 40/*ArrowDown*/) {
                     selectNext(+1, 0);
                 } else if (e.keyCode === 27/*Escape*/) {
