@@ -33,8 +33,8 @@ body {
 
 .combobox-input-value {
     padding: 8px 12px;
-    height: 1em;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .combobox-input:focus {
